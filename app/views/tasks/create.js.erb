@@ -1,3 +1,3 @@
-$('#new_task_form').remove();
-$('#new_task_link').show();
-$('#table_body').append('<%= escape_javascript(render('show', task: @task)) %>');
+<% if @success %>
+  $('#table_body').append('<%= escape_javascript(render('show', task: @task)) %>');
+<% end %>

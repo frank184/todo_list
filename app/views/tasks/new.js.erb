@@ -1,1 +1,28 @@
-$('#new_task_link').hide().after('<%= escape_javascript(render('tasks/form')) %>');
+var $new_task_form = $('#new_task_form');
+var $new_task_link = $('#new_task_link');
+
+if (typeof $new_task_form[0] === "undefined") {
+  $new_task_link.fadeOut(125,function(){
+    $(this).after('<%= escape_javascript(render('tasks/form')) %>');
+    $new_task_form = $('#new_task_form');
+    $title_field = $('#title_field');
+    $new_task_link.removeAttr('href');
+    $new_task_link.removeAttr('data-remote');
+    $title_field.focus();
+    $new_task_link.click(function(){
+      $new_task_link.fadeOut(125,function(){
+        $new_task_form.fadeIn(125);
+        $title_field.val('');
+        $title_field.focus();
+      });
+    });
+    $title_field.blur(function(){
+      $new_task_form.fadeOut(125,function(){
+        $new_task_link.fadeIn(125);
+      });
+    });
+    $new_task_form.submit(function(){
+
+    });
+  })
+}

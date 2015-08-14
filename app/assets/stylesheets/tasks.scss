@@ -4,8 +4,9 @@
 
 #logo_img {
   display: inline-block;
-  height: 18px;
-  width: 18px;
+  vertical-align: top;
+  height: 22px;
+  width: 24px;
 }
 
 .navbar-brand {
@@ -18,4 +19,14 @@
 
 #new_task_form {
   height: 46px;
+}
+
+#task_list {
+  td, th {
+    width:50%;
+  }
+}
+
+#table_corner {
+  padding: 18px;
 }

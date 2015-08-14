@@ -1,8 +1,8 @@
-<tr class="<% task.complete?? '' : 'warning' %>" id="task_<%= task.id %>">
+<tr class="<%= task.complete?? '' : 'warning' %>" id="task_<%= task.id %>">
   <td><%= task.title %></td>
   <td>
-    <%= form_for(task) do |f| %>
-      <%= f.check_box :complete, remote: true, value: task.complete? %>
+    <%= form_for(task, remote: true, method: :patch) do |f| %>
+      <%= f.check_box :complete, value: task.complete? %>
       <% if task.complete? %>
         <%= f.label :complete %>
       <% else %>
@@ -10,5 +10,5 @@
       <% end %>
     <% end %>
   </td>
-  <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, task, remote: true, method: :delete %></td>
+  <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, task, remote: true, method: :delete, data: { disable_with: "<i class='fa fa-refresh fa-spin'></i>".html_safe } %></td>
 </tr>

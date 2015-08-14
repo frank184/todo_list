@@ -1,1 +1,3 @@
-$('#task_<%= @task.id %>').remove();
+$('#task_<%= @task.id %>').fadeOut(150,function(){
+  this.remove();
+});
