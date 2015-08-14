@@ -1,0 +1,14 @@
+<tr class="<% task.complete?? '' : 'warning' %>" id="task_<%= task.id %>">
+  <td><%= task.title %></td>
+  <td>
+    <%= form_for(task) do |f| %>
+      <%= f.check_box :complete, remote: true, value: task.complete? %>
+      <% if task.complete? %>
+        <%= f.label :complete %>
+      <% else %>
+        <%= f.label 'Incomplete' %>
+      <% end %>
+    <% end %>
+  </td>
+  <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, task, remote: true, method: :delete %></td>
+</tr>

@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h1 class="jumbotron">Listing Tasks</h1>
 
-<table>
+<%= link_to 'New Task', new_task_path, remote: true, id: 'new_task_link', class: 'btn btn-primary btn-lg' %>
+
+
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -11,19 +14,9 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="table_body">
     <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.complete %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render 'show', task: task %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Task', new_task_path %>
