@@ -1,8 +1,8 @@
 <tr class="<%= task.complete?? '' : 'warning' %>" id="task_<%= task.id %>">
   <td class="<%= task.complete?? 'task_complete' : '' %>"><%= task.title %></td>
   <td>
-    <%= form_for(task, remote: true, method: :patch) do |f| %>
-      <%= f.check_box :complete, value: task.complete?, id: 'task_update_checkbox' %>
+    <%= form_for(task, remote: true, method: :put) do |f| %>
+      <%= f.check_box :complete, class: 'checkbox', value: task.complete? %>
       <% if task.complete? %>
         <%= f.label :complete %>
       <% else %>

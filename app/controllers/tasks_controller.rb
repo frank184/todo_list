@@ -4,8 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order('created_at DESC')
-    console
+    @tasks = Task.all.order('complete')
   end
 
   # GET /tasks/new
@@ -29,6 +28,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     if @task.update(update_task_params)
+      @complete = @task.complete
       flash.now[:notice] = 'Task was successfully updated.'
     else
     end

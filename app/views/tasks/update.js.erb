@@ -1,0 +1,11 @@
+<% if @complete %>
+  $('#task_<%= @task.id %>').removeClass('warning');
+  $('td:first','#task_<%= @task.id %>').addClass('task_complete');
+  $('label','#task_<%= @task.id %>').text('Complete');
+  $('#task_list').append($('#task_<%= @task.id %>'));
+<% else %>
+  $('#task_<%= @task.id %>').addClass('warning');
+  $('td:first', '#task_<%= @task.id %>').removeClass('task_complete');
+  $('label','#task_<%= @task.id %>').text('Incomplete');
+  $('#task_list').prepend($('#task_<%= @task.id %>'));
+<% end %>
