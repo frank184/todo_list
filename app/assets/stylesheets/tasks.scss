@@ -2,40 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#logo_img {
-  display: inline-block;
-  vertical-align: top;
-  height: 22px;
-  width: 24px;
+
+@media (max-width: 767px) {
+  
 }
 
-#new_task_form {
-  height: 46px;
-}
-
-#task_list {
-  td, th {
-    width:50%;
+@media (min-width: 768px) {
+  #logo_img {
+    display: inline-block;
+    vertical-align: top;
+    height: 22px;
+    width: 24px;
   }
-}
 
-#table_corner {
-  padding: 18px;
-}
+  #new_task_form {
+    height: 46px;
+  }
 
-.checkbox {
-  display: inline;
-}
+  #task_list {
+    td, th {
+      width:50%;
+    }
+  }
 
-.task_complete {
-  text-decoration: line-through;
-  color: #ccc;
-}
+  #table_corner {
+    padding: 18px;
+  }
 
-.navbar-brand {
-  &:hover {
-    #logo_img {
-      color: #333333;
+  .checkbox {
+    display: inline;
+  }
+
+  .task_complete {
+    text-decoration: line-through;
+    color: #ccc;
+  }
+
+  .navbar-brand {
+    &:hover {
+      #logo_img {
+        color: #333333;
+      }
     }
   }
 }
