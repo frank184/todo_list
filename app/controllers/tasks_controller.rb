@@ -5,18 +5,18 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all.order('complete, created_at DESC')
+    console
+    @tasks = @user.tasks.order('complete, created_at DESC')
   end
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @task =  @user.tasks.new
   end
 
   # POST /tasks
   def create
-    @task = Task.new(new_task_params)
-    @success = @task.save
+    @task =  @user.tasks.create(new_task_params)
     if @success
       flash.now[:notice] = 'Task was successfully created.'
     else
@@ -40,8 +40,12 @@ class TasksController < ApplicationController
   end
 
   private
+    def set_user
+      @user = current_user
+    end
+
     def set_task
-      @task = Task.find(params[:id])
+      @task =  Task.all.find(params[:id])
     end
 
     def new_task_params
@@ -50,9 +54,5 @@ class TasksController < ApplicationController
 
     def update_task_params
       params.require(:task).permit(:complete)
-    end
-
-    def set_user
-      @user = current_user
     end
 end

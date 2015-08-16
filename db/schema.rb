@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816002541) do
+ActiveRecord::Schema.define(version: 20150816062719) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.boolean  "complete",               default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,9 +34,11 @@ ActiveRecord::Schema.define(version: 20150816002541) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.integer  "tasks_id",               limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["tasks_id"], name: "index_users_on_tasks_id", using: :btree
 
 end
