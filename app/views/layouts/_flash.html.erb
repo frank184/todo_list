@@ -1,6 +1,8 @@
-<% flash.each do |name, msg| %>
-  <div class="alert <%= bootstrap_class_for(name) %>">
-    <button class="close">x</button>
-    <%= msg %>
-  </div>
-<% end %>
+<div id="flash_wrapper">
+  <% flash.now do |name, msg| %>
+    <div class="alert <%= bootstrap_class_for(name) %>">
+      <button class="close">x</button>
+      <%= msg %>
+    </div>
+  <% end %>
+</div>

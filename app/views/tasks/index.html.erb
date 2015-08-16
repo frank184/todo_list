@@ -1,16 +1,5 @@
-<%= link_to 'New Task', new_task_path, remote: true, id: 'new_task_link', class: 'btn btn-primary btn-lg' %>
-<table id="task_list" class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Complete</th>
-      <th id="table_corner" colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody id="table_body">
-    <% @tasks.each do |task| %>
-      <%= render 'show', task: task %>
-    <% end %>
-  </tbody>
-</table>
+<% if user_signed_in? %>
+  <%= render 'task_list' %>
+<% else %>
+  <%= render 'intro' %>
+<% end %>

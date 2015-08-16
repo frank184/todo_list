@@ -10,5 +10,7 @@
       <% end %>
     <% end %>
   </td>
+  <td><%= timeago_tag task.created_at %> </td>
+  <td><%= timeago_tag task.updated_at %> </td>
   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, task, remote: true, method: :delete, data: { disable_with: "<i class='fa fa-refresh fa-spin'></i>".html_safe } %></td>
 </tr>

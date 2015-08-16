@@ -1,4 +1,5 @@
 <% if @success %>
   $('#table_body').prepend('<%= escape_javascript(render('show', task: @task)) %>');
   $('.checkbox').click(function(){$(this).parent('form').submit();});
+  $('#flash_wrapper').replaceWith('<%= escape_javascript(render('layouts/flash')) %>')
 <% end %>

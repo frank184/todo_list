@@ -1,7 +1,7 @@
-<%= form_for(@task, remote: true, html: { id: 'new_task_form', class: 'form-inline' }) do |f| %>
+<%= form_for(@task, remote: true, html: { id: 'new_task_form', class: 'form-inline pull-right' }) do |f| %>
   <div class="input-group margin-bottom-sm">
-    <span class="input-group-addon"><i class="fa fa-check-circle"></i></span>
-    <%= f.text_field :title, id: 'title_field', class: 'form-control ' %>
+    <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
+    <%= f.text_field :title, id: 'title_field', class: 'form-control' %>
   </div>
-  <%= f.submit nil, class: 'btn btn-primary', data: { disable_with: 'Please wait...' } %>
+  <%= f.submit "Create Task", class: 'btn btn-primary', data: { disable_with: "Create Task" } %>
 <% end %>

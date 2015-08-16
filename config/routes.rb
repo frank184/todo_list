@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tasks
 
-  root 'tasks#index'
-  
+  # Root setup
+  authenticated :user do
+    root :to => "tasks#index"
+  end
+
+  root :to => "todo_list#index", as: :unauthenticated_root
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

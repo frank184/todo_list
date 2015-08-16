@@ -4,10 +4,16 @@
 
 
 @media (max-width: 767px) {
-  
+
 }
 
 @media (min-width: 768px) {
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 125px;
+  }
+
   #logo_img {
     display: inline-block;
     vertical-align: top;
@@ -21,7 +27,7 @@
 
   #task_list {
     td, th {
-      width:50%;
+      width:25%;
     }
   }
 

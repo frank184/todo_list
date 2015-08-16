@@ -17,5 +17,4 @@ class ApplicationController < ActionController::Base
         flash_type.to_s
     end
   end
-  
 end

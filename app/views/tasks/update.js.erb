@@ -9,3 +9,5 @@
   $('label','#task_<%= @task.id %>').text('Incomplete');
   $('#task_list').prepend($('#task_<%= @task.id %>'));
 <% end %>
+
+$('#task_updated_at').timeago();
