@@ -1,3 +1,4 @@
-# todo_list
+# TodoList
  A simple todo list web application in ruby on rails.
- visit: https://quiet-cove-1827.herokuapp.com
+ 
+ Check it out at: https://quiet-cove-1827.herokuapp.com
