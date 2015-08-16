@@ -21,30 +21,46 @@
 @import "font-awesome";
 
 .navbar-todolist {
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
-  background:    -moz-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
-  background:     -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
-  background:      -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
-  background:         linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(235,235,235,1) 100%);
+  background:    -moz-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(235,235,235,1) 100%);
+  background:     -ms-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(235,235,235,1) 100%);
+  background:      -o-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(235,235,235,1) 100%);
+  background:         linear-gradient(top, rgba(250,250,250,1) 0%, rgba(235,235,235,1) 100%);
   border: none;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 footer {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 100px;
   padding-top: 5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
   border-top: 1px solid #eaeaea;
   color: #777;
   a {
     color: #555;
     &:hover {
-      color: #222;
+      color: #333;
     }
   }
   small {
     font-size: 1.2rem;
+    a {
+      color: #337ab7;
+      &:hover {
+        color: #23527c;
+      }
+    }
   }
   ul {
     float: right;

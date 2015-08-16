@@ -5,7 +5,6 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    console
     @tasks = @user.tasks.order('complete, created_at DESC')
   end
 
@@ -17,6 +16,7 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     @task =  @user.tasks.create(new_task_params)
+    @success = @task.valid?
     if @success
       flash.now[:notice] = 'Task was successfully created.'
     else
