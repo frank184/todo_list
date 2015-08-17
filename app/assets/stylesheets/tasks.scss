@@ -1,43 +1,64 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#new_task_form {
+  height: 46px;
+}
 
+#task_list {
+}
+
+#table_corner {
+  padding: 18px;
+}
+
+#completed_th {
+  width: 20%;
+}
+
+.complete {
+  color: green;
+}
+
+.checkbox {
+  display: inline;
+}
+
+.task_complete {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.navbar-brand {
+  &:hover {
+    #logo_img {
+      color: #333333;
+    }
+  }
+}
 
 @media (max-width: 767px) {
-  td {
-    font-size: .95em;
+  #new_task_form {
+    height: 46px;
+  }
+}
+
+@media (max-width: 598px) {
+  .updated_at, .created_at {
+    display: none;
+  }
+
+  #completed_th {
+    width: 50%;
+  }
+
+  footer {
+    padding-bottom: 5px;
+    ul {
+      display: none;
+    }
   }
 }
 
 @media (min-width: 768px) {
-  #new_task_form {
-    height: 46px;
-  }
-
-  #task_list {
-    td, th {
-      width:25%;
-    }
-  }
-
-  #table_corner {
-    padding: 18px;
-  }
-
-  .checkbox {
-    display: inline;
-  }
-
-  .task_complete {
-    text-decoration: line-through;
-    color: #ccc;
-  }
-
-  .navbar-brand {
-    &:hover {
-      #logo_img {
-        color: #333333;
-      }
-    }
-  }
 }

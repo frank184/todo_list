@@ -3,14 +3,10 @@
   <td>
     <%= form_for(task, remote: true, method: :put) do |f| %>
       <%= f.check_box :complete, class: 'checkbox', value: task.complete? %>
-      <% if task.complete? %>
-        <%= f.label :complete %>
-      <% else %>
-        <%= f.label 'Incomplete' %>
-      <% end %>
+      <%= f.label :complete,(task.complete?? "Complete" : "Incomplete"), class: (task.complete?? "complete" : "incomplete") %>
     <% end %>
   </td>
-  <td><%= timeago_tag task.created_at %> </td>
-  <td><%= timeago_tag task.updated_at %> </td>
+  <td class="created_at"><%= timeago_tag task.created_at %> </td>
+  <td class="updated_at"><%= timeago_tag task.updated_at %> </td>
   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, task, remote: true, method: :delete, data: { disable_with: "<i class='fa fa-refresh fa-spin'></i>".html_safe } %></td>
 </tr>

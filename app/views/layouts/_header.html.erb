@@ -14,15 +14,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="pull-right">
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Settings', edit_user_registration_path, class: 'navbar-text' %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, class: 'navbar-text', method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-text' %></li>
-            <li><%= link_to 'Sign In', new_user_session_path, class: 'navbar-text' %></li>
-          <% end %>
-        </ul>
         <% if user_signed_in? %>
           <form class="navbar-form navbar-left" role="search">
             <div class="input-group margin-bottom-sm">
@@ -31,7 +22,19 @@
             </div>
           </form>
         <% end %>
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Settings', edit_user_registration_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <% end %>
+        </ul>
       </div>
+      <% if user_signed_in? %>
+
+      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

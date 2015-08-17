@@ -3,11 +3,13 @@
   $('td:first','#task_<%= @task.id %>').addClass('task_complete');
   $('label','#task_<%= @task.id %>').text('Complete');
   $('#task_list').append($('#task_<%= @task.id %>'));
+  $('.incomplete','#task_<%= @task.id %>').removeClass('incomplete').addClass('complete');
 <% else %>
   $('#task_<%= @task.id %>').addClass('warning');
   $('td:first', '#task_<%= @task.id %>').removeClass('task_complete');
   $('label','#task_<%= @task.id %>').text('Incomplete');
   $('#task_list').prepend($('#task_<%= @task.id %>'));
+  $('.complete','#task_<%= @task.id %>').removeClass('complete').addClass('incomplete');
 <% end %>
 
 $('#task_updated_at').timeago();

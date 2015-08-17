@@ -119,12 +119,30 @@ footer {
     }
   }
 
+  #logo_img {
+    width: 26px;
+    height: 24px;
+  }
+
+  .navbar-toggle {
+    padding: 5px 10px;
+  }
+
   .navbar-nav {
     li {
       &:hover {
-
       }
     }
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .mobile_container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
   }
 
   @media (orientation:landscape) {

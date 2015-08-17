@@ -4,6 +4,8 @@
   <title>TodoList</title>
   <%= favicon_link_tag 'favicon.png' %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="http://tristanedwards.me/u/SweetAlert/lib/sweet-alert.css" />
+  <link rel="stylesheet" href="http://tristanedwards.me/u/SweetAlert/lib/sweet-alert.min.js" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,7 +14,7 @@
   <%= render 'layouts/header' %>
   <%= render 'layouts/flash' %>
   <div class="row">
-    <div id="main_content" class="container">
+    <div id="main_content" class="container mobile_container">
       <%= yield %>
     </div>
   </div>
