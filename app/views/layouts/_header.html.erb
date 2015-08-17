@@ -1,12 +1,10 @@
-<nav class="navbar navbar-todolist navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <i class="fa fa-bars"></i>
       </button>
       <a id="logo_wrapper" class="navbar-brand" href="/">
         <%= image_tag 'favicon.png', height: '18px', id: 'logo_img' %>TodoList
@@ -16,22 +14,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="pull-right">
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Settings', edit_user_registration_path, class: 'navbar-text' %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, class: 'navbar-text', method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-text' %></li>
+            <li><%= link_to 'Sign In', new_user_session_path, class: 'navbar-text' %></li>
+          <% end %>
+        </ul>
         <% if user_signed_in? %>
-          <%= link_to 'Settings', edit_user_registration_path, class: 'navbar-text' %>
-          <%= link_to 'Sign Out', destroy_user_session_path, class: 'navbar-text', method: :delete %>
-        <% else %>
-          <%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-text' %>
-          <%= link_to 'Sign In', new_user_session_path, class: 'navbar-text' %>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="input-group margin-bottom-sm">
+              <span class="input-group-addon"><i class="fa fa-search"></i></span>
+              <input class="form-control" type="text" placeholder="Search">
+            </div>
+          </form>
         <% end %>
       </div>
-      <% if user_signed_in? %>
-        <form class="navbar-form navbar-left pull-right" role="search">
-          <div class="input-group margin-bottom-sm">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input class="form-control" type="text" placeholder="Search">
-          </div>
-        </form>
-      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
