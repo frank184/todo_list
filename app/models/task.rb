@@ -1,9 +1,12 @@
 class Task < ActiveRecord::Base
+  belongs_to :user
+  searchkick
+
   validates :title, presence: true
 
   def title=(value)
     write_attribute(:title, value.titleize)
   end
 
-  belongs_to :user
+
 end
