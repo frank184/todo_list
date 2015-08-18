@@ -36,7 +36,6 @@ a {
 }
 
 footer {
-  position: absolute;
   margin-right: auto;
   margin-left: auto;
   margin-top: 100px;
@@ -146,9 +145,12 @@ footer {
   }
 
   @media (orientation:landscape) {
-    footer {
-      position: relative;
-    }
+  }
+}
+
+@media (max-width: 480px) {
+  #cancel_account_btn {
+    float: right;
   }
 }
 
