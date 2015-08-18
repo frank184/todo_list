@@ -33,7 +33,7 @@
       <%= link_to "Back", :back, class: "btn btn-default btn-lg" %>
     </div>
   <% end %>
-  <%= button_to "Cancel my account", nil, id: "cancel_account_btn", class: "btn btn-default btn-lg" %></p>
+  <%= button_to "Cancel my account", 'javascript:;', id: "cancel_account_btn", class: "btn btn-default btn-lg" %></p>
 </div>
 
 
@@ -47,19 +47,29 @@
   $('#cancel_account_btn').click(function(){
     swal({
       title: "Are you sure?",
-      text: "You will not be able to recover this imaginary file!",
+      text: "You will not be able to recover this account!",
       type: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
+      confirmButtonColor: "rgba(255,75,75,1)",
       confirmButtonText: "Yes, delete it!",
-      cancelButtonText: "No, cancel plx!",
+      cancelButtonText: "Whoa No",
       closeOnConfirm: false,
       closeOnCancel: false
     }, function(isConfirm){
       if (isConfirm) {
-        swal("Deleted!", "Your imaginary file has been deleted.", "success");
-      } else {
-        swal("Cancelled", "Your imaginary file is safe :)", "error");
+        $.ajax({
+          url: '/users',
+          type: 'DELETE'
+        });
+        swal({
+          title: "Deleted!",
+          text: "Your account has been deleted!",
+          type: "success"
+        }, function(){
+          window.location.replace("/");
+        });
+
+
       }
     });
   });
