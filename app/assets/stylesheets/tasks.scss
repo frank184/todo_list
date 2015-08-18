@@ -1,6 +1,7 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #new_task_form {
   height: 46px;
 }
@@ -10,10 +11,6 @@
 
 #table_corner {
   padding: 18px;
-}
-
-#completed_th {
-  width: 20%;
 }
 
 .complete {
@@ -43,6 +40,14 @@
   }
 }
 
+.th_width {
+  width: 20%;
+}
+
+td:last-child {
+  text-align: right;
+}
+
 @media (max-width: 767px) {
 
 }
@@ -51,11 +56,9 @@
   .updated_at, .created_at {
     display: none;
   }
-
-  #completed_th {
+  td {
     width: 50%;
   }
-
   footer {
     padding-bottom: 5px;
     ul {
