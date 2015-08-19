@@ -41,17 +41,23 @@
 }
 
 .th_width {
-  width: 20%;
+  width: 25%;
 }
 
 td:last-child {
   text-align: right;
 }
 
+/**
+ * Smaller than 767px (Mobile phones)
+ */
 @media (max-width: 767px) {
 
 }
 
+/**
+ * Smaller than 598px
+ */
 @media (max-width: 598px) {
   .updated_at, .created_at {
     display: none;
@@ -67,9 +73,15 @@ td:last-child {
   }
 }
 
+/**
+ * Smaller than 363px
+ */
 @media (max-width: 363px) {
 
 }
 
+/**
+ * Larger than 767px (Tablets, PCs)
+ */
 @media (min-width: 768px) {
 }
