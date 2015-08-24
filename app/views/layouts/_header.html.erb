@@ -14,14 +14,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="pull-right">
-        <% if user_signed_in? %>
-          <%= form_for task_search_path, url: "/task/search", html: { class: "navbar-form navbar-left" } do |f| %>
-            <div class="input-group margin-bottom-sm">
-              <span class="input-group-addon"><i class="fa fa-search"></i></span>
-              <%= f.text_field :query, placeholder: "Search", class: "form-control", role: "search" %>
-            </div>
-          <% end %>
-        <% end %>
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
             <li><%= link_to 'Settings', edit_user_registration_path %></li>

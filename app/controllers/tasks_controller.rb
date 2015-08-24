@@ -2,21 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :set_user
-
-  # GET /tasks/search
-  def search
-    if params[:query].present?
-      @tasks = @user.tasks.search(params[:query])
-    end
-  end
-
-  # GET /tasks/autocomplete
-  def autocomplete
-    if params[:query].present?
-      render json: @user.tasks.search(params[:query], autocomlete: true)
-    end
-  end
-
+  
   # GET /tasks
   def index
     @tasks = @user.tasks.order('complete, created_at DESC')

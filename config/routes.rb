@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
 
+  devise_for :users
+  
   resources :tasks
-  post '/tasks/search' => 'tasks#search', as: :task_search
-  post '/tasks/autocomplete' => 'tasks#autocomplete', as: :task_autocomplete
 
   # Root setup
   authenticated :user do

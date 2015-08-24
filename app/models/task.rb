@@ -1,7 +1,5 @@
 class Task < ActiveRecord::Base
   
-  searchkick autocomplete: ['title']
-
   belongs_to :user
 
   validates :title, presence: true
