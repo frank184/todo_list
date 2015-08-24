@@ -77,7 +77,16 @@ td:last-child {
  * Smaller than 363px
  */
 @media (max-width: 363px) {
+  .input-group {
 
+    .btn {
+      font-size: .95em;
+      width: 31%;
+    }
+    .input-group {
+      width:69%;
+    }
+  }
 }
 
 /**
