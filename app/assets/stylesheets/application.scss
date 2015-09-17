@@ -113,6 +113,10 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
   padding-right: 0 !important;
 }
 
+.navbar .navbar-nav li {
+    min-width: 50px;
+}
+
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
