@@ -1,7 +1,9 @@
 # TodoList
 ### A simple todo list web application in ruby on rails.
 
-default user: user@mail.com password: password
+default user: 
+- USER: user@mail.com 
+- PASSWORD: password
 
 development - http://frank184.koding.io:3000/
 
