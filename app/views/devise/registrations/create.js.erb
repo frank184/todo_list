@@ -1,5 +1,3 @@
 <% if user_signed_in? %>
     Turbolinks.visit("/")
-<% else %>
-    $('#devise_error_messages').html('<%= j render "devise/shared/errors" %>');
 <% end %>
