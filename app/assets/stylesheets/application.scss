@@ -113,12 +113,18 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
   padding-right: 0 !important;
 }
 
-.navbar .navbar-nav li {
-    min-width: 50px;
+.navbar .navbar-nav li a {
+    min-width: 85px;
+    text-align: center;
 }
 
 .stop-scrolling {
     overflow-y: scroll !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus, .navbar-brand:hover, .navbar-brand:focus {
+    text-decoration: none;
+    background-color: #DDDDDD;
 }
 
 /* Extra small devices (phones, less than 768px) */
