@@ -93,7 +93,7 @@ footer {
 }
 
 .modal-open {
-    overflow-y: scroll;
+    overflow-y: scroll !important;
 }
 
 .modal-header .close {
@@ -117,6 +117,9 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
     min-width: 50px;
 }
 
+.stop-scrolling {
+    overflow-y: scroll !important;
+}
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
