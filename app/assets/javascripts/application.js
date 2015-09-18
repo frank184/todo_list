@@ -16,9 +16,4 @@
 //= require turbolinks
 //= require_tree .
 //= require rails-timeago
-
-$(function(){
-    $(document).on('show.bs.modal',function(){
-        $('.modal-open').css('padding', 0);
-    });
-});
+//= require bootstrap-tour

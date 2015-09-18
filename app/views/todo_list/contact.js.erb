@@ -1,2 +1,12 @@
-$('#modal').html('<%= j render "todo_list/contact" %>');
-$('#contact').modal('show');
+$modal = $('.modal');
+if ($modal.length > 0) {
+    $('.modal').modal('hide').after(function(){
+        console.log('removed .modal-backdrop.fade.in');
+        $('.modal-backdrop.fade.in').remove();
+        $('#modal').html('<%= j render "todo_list/contact" %>');
+        $('#contact').modal('show');
+    });
+} else {
+    $('#modal').html('<%= j render "todo_list/contact" %>');
+    $('#contact').modal('show');
+}

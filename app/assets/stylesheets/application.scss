@@ -12,6 +12,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap-tour
  */
 
 @import "bootstrap-sprockets";
@@ -24,6 +25,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
+  padding-right: 0 !important;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-top: 125px;
@@ -61,7 +63,9 @@ footer {
       }
     }
   }
-  ul {
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 7px;
     float: right;
     list-style: none;
     li {
@@ -109,8 +113,13 @@ footer {
   border: none;
 }
 
-body, .navbar-fixed-top, .navbar-fixed-bottom {
-  padding-right: 0 !important;
+.navbar .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    color: #337ab7;
+}
+
+.navbar-fixed-bottom {
+    padding-right: 30px;
 }
 
 .navbar .navbar-nav li a {
@@ -122,9 +131,17 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
     overflow-y: scroll !important;
 }
 
-.nav > li > a:hover, .nav > li > a:focus, .navbar-brand:hover, .navbar-brand:focus {
-    text-decoration: none;
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
     background-color: #DDDDDD;
+    color: #337ab7;
+}
+
+.logo {
+    font-size: 18px;
+    vertical-align: super;
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -134,11 +151,15 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
 @media (max-width: 767px) {
   html, body {
     width: auto !important;
-    overflow-x: hidden !important;
+    overflow: hidden !important;
   }
 
   body {
     margin-top: 100px;
+  }
+
+  nav .navbar .nav li {
+      border: 1px solid #000;
   }
 
   footer {
@@ -157,12 +178,9 @@ body, .navbar-fixed-top, .navbar-fixed-bottom {
     padding: 5px 10px;
   }
 
-  .navbar-nav {
-    li {
-      &:hover {
-      }
-    }
-  }
+  .navbar .navbar-nav li a {
+    text-align: right;
+}
 
   .navbar-brand {
     font-size: 20px;

@@ -3,10 +3,10 @@ if ($modal.length > 0) {
     $('.modal').modal('hide').after(function(){
         console.log('removed .modal-backdrop.fade.in');
         $('.modal-backdrop.fade.in').remove();
-        $('#modal').html('<%= j render "devise/registrations/edit" %>');
+        $('#modal').html('<%= j render "devise/passwords/edit" %>');
         $('#edit_registration').modal('show');
     });
 } else {
-    $('#modal').html('<%= j render "devise/registrations/edit" %>');
+    $('#modal').html('<%= j render "devise/passwords/edit" %>');
     $('#edit_registration').modal('show');
 }
