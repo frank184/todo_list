@@ -1,4 +1,9 @@
 <% if @success %>
+if ($('.warning').length > 0) {
   $('<%= escape_javascript(render('show', task: @task)) %>').insertAfter($('.warning').last());
   $('.checkbox').click(function(){$(this).parent('form').submit();});
+} else {
+  $('#table_body').prepend('<%= escape_javascript(render('show', task: @task)) %>');
+  $('.checkbox').click(function(){$(this).parent('form').submit();});
+}
 <% end %>

@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = @user.tasks.order('complete')
+    @tasks = @user.tasks.order('complete, created_at')
   end
 
   # GET /tasks/new
