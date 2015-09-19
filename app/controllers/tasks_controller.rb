@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :set_user
-  
+
   # GET /tasks
   def index
     @tasks = @user.tasks.order('complete, created_at DESC')
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tasks/1
+  # PATCH/PUT /tasks/id
   def update
     if @task.update(update_task_params)
       @complete = @task.complete
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /tasks/1
+  # DELETE /tasks/id
   def destroy
     @task.destroy
     flash.now[:notice] = 'Task was successfully destroyed.'
