@@ -1,5 +1,5 @@
 $('#devise_error_messages').html('<%= j render "devise/shared/errors" %>');
 if ($('#devise_error_messages').html().length <= 0) {
     $('#modal .modal').modal('hide');
-    swal('New Password', 'Go to your email account to change your password', 'success');
+    swal('Account Update!', 'Your account has been successfully updated!', 'success');
 }

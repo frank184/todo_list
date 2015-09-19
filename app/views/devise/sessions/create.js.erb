@@ -1,6 +1,5 @@
-<% if user_signed_in? %>
-    Turbolinks.visit("/")
-<% else %>
-    alert(<%= resource.errors.full_messages.each %>);
+<% unless user_signed_in? %>
     $('#devise_error_messages').html('<%= j render "devise/shared/errors"%>');
+<% else %>
+    Turbolinks.visit("/")
 <% end %>
