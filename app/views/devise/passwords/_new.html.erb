@@ -24,7 +24,7 @@
       <div class="modal-footer">
         <%# end form_for, very important do not refactor, otherwise close btn submits %>
         <%= button_tag(type: "submit", class: "btn btn-primary btn-lg", data: {disable_with: raw("<i class='fa fa-spin fa-refresh'></i>")}) do %>
-            Send me reset password instructions
+            Send<span class="mobile-remove"> me reset instructions</span>
         <% end %>
 
         <% end %>
