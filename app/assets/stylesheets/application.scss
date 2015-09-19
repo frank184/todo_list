@@ -144,6 +144,7 @@ footer {
     vertical-align: super;
 }
 
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
@@ -197,9 +198,9 @@ footer {
 }
 
 @media (max-width: 480px) {
-  #cancel_account_btn {
-    float: right !important;
-  }
+    .mobile-remove {
+        display: none;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */
